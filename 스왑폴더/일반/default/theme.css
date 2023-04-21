@@ -49,16 +49,18 @@ body {
 /* Nickname / Badge */
 .chat_upper_box {
   position: relative;
-  padding: 0.55rem;
-  background: rgba(0,0,0,0.68);
+  padding: 0.25rem;
   display: flex;
   width: 100%;
-  height: 35px;
+  height: 25px;
   z-index: 10;
-  display: none;
 }
 .chat_nickname_box {
-	display: none;
+  display: flex;
+  flex-grow: 1;
+  padding: 0 0.25rem;
+  color: #fff !important;
+  font-weight: 600;
 }
 .chat_badge_box {
   background-size: 90px;
@@ -71,7 +73,7 @@ body {
 .chat_msg_box {
   padding: 0.35rem 0.7rem;
   max-height: 50rem; /* 텍스트 영역 최대 높이 */
-  font-size: 29px;
+  font-size: 27px;
 }
 .chat_msg_box.image_only {
   text-align: center;
