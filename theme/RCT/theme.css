@@ -10,7 +10,7 @@
   font-family: 'Dohyeon';
   font-style: regular;
   font-weight: 300;
-  src: local('도현체'), url('../_shared/fonts/BMDOHYEON.ttf');
+  src: local('나눔고딕'), url('../_shared/fonts/NanumBarunGothic');
 }
 
 * {
@@ -21,7 +21,7 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: 'Poor Story', 'Poor Story', sans-serif;
+  font-family: 'NanumBarunGothic', 'NanumBarunGothic', sans-serif;
 }
 body {
   position: absolute;
@@ -45,6 +45,8 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
+  border-left: 0.15rem solid #fff;
+  border-top: 0.15rem solid #fff;
 }
 /* Nickname / Badge */
 .chat_upper_box {
@@ -54,16 +56,7 @@ body {
   width: 100%;
   height: 25px;
   z-index: 10;
-}
-.chat_nickname_box {
-  display: flex;
-  flex-grow: 1;
-  padding: 0 0.25rem;
-  color: #fff !important;
-  font-weight: 600;
-}
-.chat_badge_box {
-  background-size: 90px;
+  display: none;
 }
 /* Messages */
 .chat_lower_box {
@@ -73,7 +66,7 @@ body {
 .chat_msg_box {
   padding: 0.35rem 0.7rem;
   max-height: 50rem; /* 텍스트 영역 최대 높이 */
-  font-size: 27px;
+  font-size: 24px;
 }
 .chat_msg_box.image_only {
   text-align: center;
@@ -83,7 +76,7 @@ body {
 }
 
 /* Image Sizes */
-.cheer_icon, .twitch_emote, .dccon {
+.cheer_icon, .twitch_emote , .dccon {
   vertical-align: bottom;
 }
 .cheer_icon {
@@ -93,7 +86,7 @@ body {
   height: 2rem;
 }
 .dccon {
-  height: 9.75rem;
+  height: 9.95rem;
 }
 
 

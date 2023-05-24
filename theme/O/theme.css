@@ -4,7 +4,7 @@
  licensed under MIT license
  based on 'xcom' theme which based on 'mario' theme
 */
-@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
 @font-face {
   font-family: 'Dohyeon';
@@ -21,7 +21,7 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: 'Poor Story', 'Poor Story', sans-serif;
+  font-family: 'Dohyeon', 'Dohyeon', sans-serif;
 }
 body {
   position: absolute;
@@ -33,46 +33,64 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  line-height: 1.9rem;
+  line-height: 1.5rem;
   word-wrap: break-word;
+  perspective: 600px;
 }
 .chat_outer_box {
   margin: 0.25rem 0;
   padding: 0;
   width: 100%;
+  background: rgba(255,255,255,0.90);
+  transform: rotateY(45deg);
+  /*
   text-shadow: 0 0 0.25rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000;
+  */
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  perspective: 300px;
+  transform: rotateY(-15deg);
 }
 /* Nickname / Badge */
 .chat_upper_box {
   position: relative;
-  padding: 0.55rem;
+  padding: 0.35rem;
+  background: rgba(0,0,0,0.1008);
   display: flex;
-  width: 100%;
-  height: 35px;
   z-index: 10;
+  display: none;
 }
 .chat_nickname_box {
   display: flex;
   flex-grow: 1;
   padding: 0 0.25rem;
-  color: #fff !important;
+  color: #000 !important;
   font-weight: 600;
+  display: none;
 }
 .chat_badge_box {
-  background-size: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 0.25rem;
+  display: none;
+}
+.chat_badge_box > img {
+  width: 1.375rem;
+  height: 1.375rem;
+  margin: 0 0 0 0.1rem;
+  border: 0.125rem solid rgba(0, 0, 0, 0.5);
+  display: none;
 }
 /* Messages */
 .chat_lower_box {
   position: relative;
-  color: #fff;
+  color: #000;
 }
 .chat_msg_box {
-  padding: 0.35rem 0.7rem;
-  max-height: 50rem; /* 텍스트 영역 최대 높이 */
-  font-size: 29px;
+  padding: 0.25rem 0.5rem;
+  max-height: 19rem; /* 텍스트 영역 최대 높이 */
+  font-size: 22px;
 }
 .chat_msg_box.image_only {
   text-align: center;
@@ -92,9 +110,8 @@ body {
   height: 2rem;
 }
 .dccon {
-  height: 9.75rem;
+  height: 9.25rem;
 }
-
 
 /* Special Cases */
 @keyframes blinking-text {
@@ -120,6 +137,7 @@ body {
   padding: 0.1rem 0.25rem;
   margin: 0.08rem;
   border: 0.08rem solid #fff;
+  background-color: rgba(0, 0, 0, 0.125);
 }
 .chat_msg_box > .chat_cheer_box {
   margin: -2.5rem -0.5rem 0 -0.5rem;

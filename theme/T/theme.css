@@ -4,13 +4,13 @@
  licensed under MIT license
  based on 'xcom' theme which based on 'mario' theme
 */
-@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 @font-face {
   font-family: 'Dohyeon';
   font-style: regular;
   font-weight: 300;
-  src: local('도현체'), url('../_shared/fonts/BMDOHYEON.ttf');
+  src: local('주아체'), url('../_shared/fonts/BMJUA.ttf');
 }
 
 * {
@@ -21,7 +21,7 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: 'Dohyeon', 'Dohyeon', sans-serif;
+  font-family: 'Jua', 'Jua', sans-serif;
 }
 body {
   position: absolute;
@@ -40,18 +40,17 @@ body {
   margin: 0.25rem 0;
   padding: 0;
   width: 100%;
-  background: rgba(0,0,0,0.68);
-  text-shadow: 0 0 0.25rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000;
+  background: rgba(209,178,255,1);
+  border: 0.15rem solid rgba(0, 0, 0, 1);
   position: relative;
   overflow: hidden;
-  border: 0.35rem solid rgba(237, 169, 0, 1);
+  border-radius: 9px;
 }
 /* Nickname / Badge */
 .chat_upper_box {
   position: relative;
   padding: 0.35rem;
   background: rgba(0,0,0,0.68);
-  
   display: flex;
   z-index: 10;
   display: none;
@@ -81,12 +80,12 @@ body {
 /* Messages */
 .chat_lower_box {
   position: relative;
-  color: #fff;
+  color: #000;
 }
 .chat_msg_box {
-  padding: 0.25rem 0.5rem;
-  max-height: 19rem; /* 텍스트 영역 최대 높이 */
-  font-size: 22px;
+  padding: 0.25rem 0.7rem;
+  max-height: 50rem; /* 텍스트 영역 최대 높이 */
+  font-size: 24px;
 }
 .chat_msg_box.image_only {
   text-align: center;
@@ -106,7 +105,7 @@ body {
   height: 2rem;
 }
 .dccon {
-  height: 9.25rem;
+  height: 9.65rem;
 }
 
 /* Special Cases */

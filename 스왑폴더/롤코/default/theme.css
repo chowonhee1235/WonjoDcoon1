@@ -4,13 +4,13 @@
  licensed under MIT license
  based on 'xcom' theme which based on 'mario' theme
 */
-@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 
 @font-face {
   font-family: 'Dohyeon';
   font-style: regular;
   font-weight: 300;
-  src: local('도현체'), url('../_shared/fonts/BMDOHYEON.ttf');
+  src: local('나눔고딕'), url('../_shared/fonts/NanumBarunGothic');
 }
 
 * {
@@ -21,7 +21,7 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: 'Dohyeon', 'Dohyeon', sans-serif;
+  font-family: 'NanumBarunGothic', 'NanumBarunGothic', sans-serif;
 }
 body {
   position: absolute;
@@ -33,59 +33,40 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  line-height: 1.5rem;
+  line-height: 1.9rem;
   word-wrap: break-word;
 }
 .chat_outer_box {
   margin: 0.25rem 0;
   padding: 0;
   width: 100%;
-  background: rgba(165,102,255,0.9);
-  border: 0.35rem solid rgba(209, 178, 255, 1);
+  background: rgba(0,0,0,0.68);
+  text-shadow: 0 0 0.25rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000;
   position: relative;
   overflow: hidden;
-  border-radius: 9px;
+  border-radius: 8px;
+  border-left: 0.15rem solid #fff;
+  border-top: 0.15rem solid #fff;
 }
 /* Nickname / Badge */
 .chat_upper_box {
   position: relative;
-  padding: 0.35rem;
-  background: rgba(0,0,0,0.68);
+  padding: 0.25rem;
   display: flex;
+  width: 100%;
+  height: 25px;
   z-index: 10;
-  display: none;
-}
-.chat_nickname_box {
-  display: flex;
-  flex-grow: 1;
-  padding: 0 0.25rem;
-  color: #fff !important;
-  font-weight: 600;
-  display: none;
-}
-.chat_badge_box {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-right: 0.25rem;
-  display: none;
-}
-.chat_badge_box > img {
-  width: 1.375rem;
-  height: 1.375rem;
-  margin: 0 0 0 0.1rem;
-  border: 0.125rem solid rgba(0, 0, 0, 0.5);
   display: none;
 }
 /* Messages */
 .chat_lower_box {
   position: relative;
-  color: #000;
+  color: #fff;
 }
 .chat_msg_box {
-  padding: 0.25rem 0.7rem;
+  padding: 0.35rem 0.7rem;
   max-height: 50rem; /* 텍스트 영역 최대 높이 */
-  font-size: 29px;
+  font-size: 24px;
 }
 .chat_msg_box.image_only {
   text-align: center;
@@ -95,7 +76,7 @@ body {
 }
 
 /* Image Sizes */
-.cheer_icon, .twitch_emote, .dccon {
+.cheer_icon, .twitch_emote , .dccon {
   vertical-align: bottom;
 }
 .cheer_icon {
@@ -105,8 +86,9 @@ body {
   height: 2rem;
 }
 .dccon {
-  height: 9.65rem;
+  height: 9.95rem;
 }
+
 
 /* Special Cases */
 @keyframes blinking-text {
