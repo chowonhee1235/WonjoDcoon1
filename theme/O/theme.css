@@ -35,21 +35,18 @@ body {
   flex-direction: column;
   line-height: 1.5rem;
   word-wrap: break-word;
-  perspective: 600px;
+  perspective: 300px;
 }
 .chat_outer_box {
   margin: 0.25rem 0;
   padding: 0;
   width: 100%;
   background: rgba(255,255,255,0.90);
-  transform: rotateY(45deg);
   /*
   text-shadow: 0 0 0.25rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000;
   */
   position: relative;
   overflow: hidden;
-  perspective: 300px;
-  transform: rotateY(-15deg);
 }
 /* Nickname / Badge */
 .chat_upper_box {
