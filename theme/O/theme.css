@@ -22,6 +22,8 @@ html {
   height: 100%;
   overflow: hidden;
   font-family: 'Dohyeon', 'Dohyeon', sans-serif;
+  margin: 5px;
+  transform: perspective(600px) rotateY(-23deg);
 }
 body {
   position: absolute;
@@ -35,7 +37,6 @@ body {
   flex-direction: column;
   line-height: 1.5rem;
   word-wrap: break-word;
-  perspective: 300px;
 }
 .chat_outer_box {
   margin: 0.25rem 0;

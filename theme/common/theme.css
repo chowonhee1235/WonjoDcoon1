@@ -1,0 +1,60 @@
+body {
+    zoom: 1.5;
+}
+img.twitch_emote {
+	max-height: 50px;
+}
+.chat_nickname_box {
+	min-width: 150px;
+}
+.dccon {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-repeat: no-repeat;
+	background-size: 100px 100px;
+}
+.dccon img {
+	max-height: 100px;
+}
+
+/* 잔짜잔 효과 */
+.dccon.dcconL {
+	position: relative;
+	margin-right: 50px;
+	width: 50px;
+}
+.dccon.dcconR {
+	position: relative;
+	margin-right: 50px;
+	width: 50px;
+	transform: scaleX(-1);
+    background-position: -50px;
+}
+.dccon.dcconL::after {
+	content: '';
+	position: absolute;
+	right: -50px;
+	width: 50px;
+	height: inherit;
+	transform: scaleX(-1);
+	background-image: inherit;
+	background-size: 100px 100px;
+}
+.dccon.dcconR::after {
+	position: absolute;
+	content: '';
+	left: -50px;
+	width: 50px;
+	height: inherit;
+	transform: scaleX(-1);
+	background-image: inherit;
+	background-size: 100px 100px;
+	background-position: -50px;
+}
+
+/* Magnifying */
+.dccon.dcconM {
+	background-size: 200px 200px;
+	background-position: -50px;
+}

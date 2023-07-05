@@ -83,9 +83,9 @@ body {
   color: #000;
 }
 .chat_msg_box {
-  padding: 0.25rem 0.7rem;
-  max-height: 50rem; /* 텍스트 영역 최대 높이 */
-  font-size: 24px;
+  padding: 0.45rem 0.7rem;
+  max-height: 60rem; /* 텍스트 영역 최대 높이 */
+  font-size: 26px;
 }
 .chat_msg_box.image_only {
   text-align: center;
