@@ -1,181 +1,282 @@
-@charset "UTF-8";
 /*
- (c) 2018 kuriyama hibiya <kuriyama@hibiya.moe>
- licensed under MIT license
- based on 'xcom' theme which based on 'mario' theme
+ * ========================================
+ *                폰트 설정
+ *
+ *  폰트 URL과 폰트명을 변경 하시면 됩니다.
+ * ========================================
 */
-@import url(https://fonts.googleapis.com/css?family=Lato);
 
-@font-face {
-  font-family: 'Dohyeon';
-  font-style: regular;
-  font-weight: 300;
-  src: local('도현체'), url('../_shared/fonts/BMDOHYEON.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
-* {
-  box-sizing: border-box;
-}
+
+/* ====== 전체 폰트 ====== */
 html {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  font-family: 'Dohyeon', 'Dohyeon', sans-serif;
-  margin: 5px;
-  transform: perspective(600px) rotateY(-23deg);
+  font-family: 'Do Hyeon', sans-serif;
 }
-body {
-  position: absolute;
-  bottom: 0;
-  margin: 0;
-  width: 100%;
-}
-#chat_wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.5rem;
-  word-wrap: break-word;
-}
-.chat_outer_box {
-  margin: 0.25rem 0;
-  padding: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.90);
-  /*
-  text-shadow: 0 0 0.25rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000;
-  */
-  position: relative;
-  overflow: hidden;
-}
-/* Nickname / Badge */
-.chat_upper_box {
-  position: relative;
-  padding: 0.35rem;
-  background: rgba(0,0,0,0.1008);
-  display: flex;
-  z-index: 10;
-  display: none;
-}
+
+/* ===== 닉네임 폰트 ===== */
 .chat_nickname_box {
-  display: none;
-}
-.chat_badge_box {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-right: 0.35rem;
-}
-.chat_badge_box > img {
-  width: 1.375rem;
-  height: 1.375rem;
-  margin: 0 0 0 0.1rem;
-}
-/* Messages */
-.chat_lower_box {
-  position: relative;
-  color: #fff;
-}
-/* Messages */
-.chat_lower_box {
-  position: relative;
-  color: #000;
-}
-.chat_msg_box {
-  padding: 0.25rem 0.5rem;
-  max-height: 19rem; /* 텍스트 영역 최대 높이 */
-  font-size: 22px;
-}
-.chat_msg_box.image_only {
-  text-align: center;
-}
-.chat_msg_box.image_only:empty {
-  display: none;
+  font-family: 'Do Hyeon', sans-serif;
 }
 
-/* Image Sizes */
-.cheer_icon, .twitch_emote, .dccon {
-  vertical-align: bottom;
-}
-.cheer_icon {
-  height: 1.25rem;
-}
-.twitch_emote {
-  height: 2rem;
-}
-.dccon {
-  height: 9.25rem;
-}
 
-/* Special Cases */
-@keyframes blinking-text {
-  from { color: #000; }
-  to { color: rgba(0, 0, 0, 0.5); }
-}
-.chat_subscribe_box,
-.chat_cheer_box	{ /* TODO: fix outgoing twip donations */
-  text-align: center;
-  font-weight: bold;
-  padding: 3rem 0.5rem 1rem 0.5rem;
-  margin-top: -2.5rem;
-  font-size: 1rem;
-  background: rgba(170, 204, 204, 0.5);
-  background-blend-mode: multiply;
-  text-shadow: none;
-  color: #000;
-  animation: blinking-text 1s infinite alternate ease;
-}
-.chat_cheer_text {
-  color: #fff;
-  display: inline-block;
-  padding: 0.1rem 0.25rem;
-  margin: 0.08rem;
-  border: 0.08rem solid #fff;
-  background-color: rgba(0, 0, 0, 0.125);
-}
-.chat_msg_box > .chat_cheer_box {
-  margin: -2.5rem -0.5rem 0 -0.5rem;
-}
-.chat_subscribe_box + .chat_msg_box:empty {
-  display: none;
-}
+/*
+ * ========================================
+ *                기능 토글
+ *
+ * 원치 않는 기능을 주석처리 하시면 됩니다.
+ * ========================================
+*/
 
-/* Clip */
-.chat_clip_box {
-  display: flex;
-  flex-direction: column;
-  height: 8rem;
-  padding: 0.25rem 0.5rem;
-  color: #fff;
-}
-.chat_clip_box.invalid {
-  height: 1.5rem;
-  text-align: center;
-  color: #acc;
-  text-shadow: none;
-}
-.chat_clip_box > img {
+/* ===== 비트 배경색 ===== */
+.chat_outer_box .chat_cheer_box::after {
+  content: '';
+  display: block;
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  margin: auto;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: 0;
+  background: transparent;
+  z-index: -1;
+  transition: all .6s ease;
 }
-.chat_clip_title, .chat_clip_by {
+
+.chat_outer_box:last-child .chat_cheer_box::after {
+  background: #fda403;
+}
+
+/* ===== 구독 배경색 ===== */
+.chat_outer_box .chat_subscribe_box::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  transition: all .6s ease;
+}
+
+.chat_outer_box:last-child .chat_subscribe_box::after {
+  background: #fda403;
+}
+
+/* ===== 이모트 축약 ===== */
+.chat_msg_box.image_only img.twitch_emote:nth-child(999) {
+  border-radius: 5px;
+  width: 15px;
+  height: 15px;
+  filter: contrast(0) brightness(1.91);
+  margin-left: 2px;
+  background: #000;
+  clip-path: polygon(45% 0, 55% 0, 55% 45%, 100% 45%, 100% 55%, 55% 55%,
+          55% 100%, 45% 100%, 45% 55%, 0% 55%, 0% 45%, 45% 45%);
+}
+
+.chat_msg_box.image_only img.twitch_emote:nth-child(n + 999) {
+  display: none;
+}
+
+
+/*
+ * ========================================
+ *                 Precip2
+ *
+ *     여기부터는 수정하시면 안됩니다.
+ * ========================================
+*/
+
+/* ======== 전체적인 레이아웃 ======== */
+html {
+  overflow: hidden;
+  color: white;
+}
+
+body {
+  position: absolute;
+  margin: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+
+#background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* ==== 트위치 이모티콘 및 디시콘 ==== */
+img.twitch_emote {
+  max-height: 25px;
+  vertical-align: middle;
+}
+/*디시콘 사이즈 조절 #####################################################*/
+img.dccon {
+  height: 150px;
+  width: 150px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+/* 이모티콘만 포함된 경우 */
+.chat_msg_box.image_only {
+  /*display: flex;*/
+}
+
+.chat_msg_box.image_only img.twitch_emote {
+  max-height: 50px;
+  height: 50px;
   position: relative;
 }
-.chat_clip_title {
-  flex-grow: 1;
-  overflow: hidden;
+
+/* ======== 구독 및 비트 후원 ======== */
+.chat_subscribe_box,
+.chat_cheer_box {
+  text-align: center;
+  animation: SubsAni 6 2s ease;
 }
+
+
+.chat_cheer_text {
+  color: #00bcd4;
+  display: inline-block;
+}
+
+
+.chat_cheer_text img.cheer_icon {
+  max-height: 1em;
+  vertical-align: middle;
+}
+
+@keyframes SubsAni {
+  50% {
+    color: rgba(255, 255, 255, .5);
+  }
+}
+
+
+/* ===== 채팅 버블 및 애니메이션 ===== */
+.chat_outer_box {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  margin-top: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 6px 15px;
+  opacity: .4;
+}
+
+.chat_outer_box * {
+  transition: all .6s linear;
+}
+
+/* 마지막 채팅 강조 */
+.chat_outer_box:not(:last-child) .chat_nickname_box {
+  color: #FFFFFF !important;
+}
+/*#########################################################채팅창백그라운드색상*/
+.chat_outer_box{background: rgba(255, 255, 255, .9);}
+
+/*#########################################################마지막챗백그라운드색상*/
+/*.chat_outer_box:last-child {
+  background: #;
+}*/
+/*###########################################################구독배찌사이즈*/
+.chat_badge_box img {width: 16px; height: 16px;}
+.chat_outre_box:last-child .chat_cheer_text,
+.chat_outre_box:last-child .chat_badge_box {
+   color: #f1f1f1 !important;
+}
+
+.chat_outer_box:last-child .chat_nickname_box {
+   color: rgba(255, 255, 255, .9) !important;
+}
+
+/* 최근 채팅은 불투명하게 */
+.chat_outer_box:nth-last-child(-n + 100) {
+  opacity: 1;
+}
+
+/* ======= 사용자 이름 및 배지 ======= */
+/*############################################닉네임사이즈*/
+.chat_upper_box {
+  margin-right: 5px;
+  margin-bottom: -6px;
+  display: flex;
+  align-items: flex-start;
+  flex: 0 0 auto;
+  font-size: 0px;
+}
+
+.chat_nickname_box {
+  font-size: 0.8em;
+  margin-top: 4px;
+}
+
+.chat_badge_box {
+  margin-left: 5px;
+  margin-top: 4px;
+}
+
+.chat_nickname_box,
+.chat_badge_box {
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+/* =========== 채팅 메시지 =========== */
+.chat_outer_box .chat_msg_box,
+.chat_lower_box {
+  clear: right;
+}
+/*#######################################채팅메시지사이즈*/
+.chat_msg_box {
+  white-space: pre-line;
+  word-break: break-word;
+  max-height: 999px;
+  padding: 3px;
+  font-size: 23px;
+  color: #000000;
+}
+/* === 클립을 포함하고 있는 메시지 === */
+.clip_included .chat_msg_box {
+  max-height: 170px;
+}
+
+.chat_clip_box {
+  position: relative;
+  margin-top: 7px;
+}
+
+.chat_clip_box img {
+  height: 56px;
+  float: left;
+}
+
+.chat_clip_title {
+  line-height: 56px;
+  text-align: center;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .chat_clip_by {
-  text-align: right;
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.75);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.7em;
+}
+
+.chat_clip_box.text_only {
+  text-align: center;
 }
