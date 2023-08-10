@@ -200,7 +200,7 @@ img.dccon {
    color: #f1f1f1 !important;
 }
 /*#######################################원조채팅만다르게*/
-.user_wonjokr .chat_upper_box::after {
+/*.user_wonjokr .chat_upper_box::after {
   content: 'WONJO';
   font-size: 22px;
   color: #FF5E00;
@@ -212,10 +212,11 @@ img.dccon {
   height: 1.125rem;
   font-size: 0.875rem !important;
   margin: 0.25rem 0.25rem 0 0;
-  background-image: url('file:///G:/%EB%82%B4%20%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C/Twitch/BridgeBBCC_0.5.5/theme/P/brod.png');
+  background-image: url('https://i.postimg.cc/N0nR2qpL/brod.png');
+  background-repeat: no-repeat;
 }
 .user_wonjokr .chat_badge_box {display: none;}
-.user_wonjokr .chat_outer_box{background: rgba(255, 94, 0, .9);}
+.user_wonjokr .chat_outer_box{background: rgba(255, 94, 0, .9);}*/
 
 /*#######################################여기까지 원조채팅*/
 .chat_outer_box:last-child .chat_nickname_box {
@@ -238,7 +239,6 @@ img.dccon {
   font-size: 0px;
 }
 .chat_nickname_box {
-  display: none;
 }
 
 .chat_badge_box {
